@@ -20,7 +20,7 @@
     "test": "react-scripts calculator",
     "eject": "react-scripts eject",
     "deploy": "gh-pages -d build",
-    "predeploy": "npm run buildg"
+    "predeploy": "npm run build"
   },
   "eslintConfig": {
     "extends": [

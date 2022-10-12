@@ -43,11 +43,10 @@ const Input = ({
           setHideCalculate(false);
         }
         parent.classList.remove('active');
-      }, 250);
+      }, 300);
       setTimer(newTimer);
     } else {
       parent.classList.add('active');
-      console.log('yes');
       setValue(e.target.value);
       clearTimeout(timer);
       const newTimer = setTimeout(() => {
@@ -55,7 +54,7 @@ const Input = ({
         setValue(newValue);
         setHideCalculate(false);
         parent.classList.remove('active');
-      }, 250);
+      }, 300);
       setTimer(newTimer);
     }
   };
@@ -66,9 +65,10 @@ const Input = ({
     setValue(e.target.value);
     clearTimeout(timer2);
     const newTimer = setTimeout(() => {
+      console.log('yes');
       parent.classList.remove('active');
     }, 400);
-    setTimer(newTimer);
+    setTimer2(newTimer);
   };
 
   return (
@@ -77,7 +77,7 @@ const Input = ({
       <input
         className={'calculator__number'}
         type="number"
-        value={leasing ? firstFee : value}
+        value={leasing ? firstFee : String(value)}
         min={min}
         max={max}
         disabled={disabled}
