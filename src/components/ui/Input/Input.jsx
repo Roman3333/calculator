@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import styles from './Input.module.scss';
+import './Input.scss';
 
 const Input = ({
   value,
@@ -19,9 +19,15 @@ const Input = ({
   onBlur,
 }) => {
   const [timer, setTimer] = useState(null);
+  const [timer2, setTimer2] = useState(null);
+  const [write, setWrite] = useState(false);
 
   const handleValue = (e) => {
+    let parent = e.target.closest('div');
+    parent.classList.add('active');
+
     setHideCalculate(true);
+
     if (leasing) {
       setFirstFee(e.target.value);
       clearTimeout(timer);
@@ -36,23 +42,40 @@ const Input = ({
           setFirstFee(e.target.value);
           setHideCalculate(false);
         }
+        parent.classList.remove('active');
       }, 250);
       setTimer(newTimer);
     } else {
+      parent.classList.add('active');
+      console.log('yes');
       setValue(e.target.value);
       clearTimeout(timer);
       const newTimer = setTimeout(() => {
         const newValue = Math.max(min, Math.min(max, e.target.value));
         setValue(newValue);
         setHideCalculate(false);
+        parent.classList.remove('active');
       }, 250);
       setTimer(newTimer);
     }
   };
+
+  const handleValueMouse = (e) => {
+    let parent = e.target.closest('div');
+    parent.classList.add('active');
+    setValue(e.target.value);
+    clearTimeout(timer2);
+    const newTimer = setTimeout(() => {
+      parent.classList.remove('active');
+    }, 400);
+    setTimer(newTimer);
+  };
+
   return (
-    <div className={styles.input}>
+    <div className={'calculator__box'}>
+      <span className={'calculator__active'}>Ввод текста</span>
       <input
-        className={styles.inputNum}
+        className={'calculator__number'}
         type="number"
         value={leasing ? firstFee : value}
         min={min}
@@ -63,13 +86,13 @@ const Input = ({
         onBlur={onBlur}
       />
       <input
-        className={styles.inputRange}
+        className={'calculator__range'}
         min={min}
         value={value}
         max={max}
         type="range"
         disabled={disabled}
-        onChange={(e) => setValue(e.target.value)}
+        onChange={handleValueMouse}
         style={getBackgroundSize()}
       />
       {children}

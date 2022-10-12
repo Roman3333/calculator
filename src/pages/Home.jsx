@@ -144,12 +144,36 @@ function Home({ isRequstSended, setRequstSended, isRequstSuccess, setRequstSucce
       <div className={'calculator__counted'}>
         <div className={'calculator__leasingPrice'}>
           <p className={'calculator__leasingPrice-p'}>Сумма договора лизинга</p>
-          {!hideCalculate && <p className={'calculator__leasing-price'}>{leasingPrice} ₽</p>}
+          {!hideCalculate && (
+            <p className={'calculator__leasing-price'}>
+              {String(leasingPrice)
+                .split('')
+                .reverse()
+                .join('')
+                .replace(/\d\d\d/g, '$& ')
+                .split('')
+                .reverse()
+                .join('')}{' '}
+              ₽
+            </p>
+          )}
           {hideCalculate && <p className={'loadingSpinner'}></p>}
         </div>
         <div className={'calculator__month'}>
           <p className={'calculator__month-p'}>Ежемесячный платеж от</p>
-          {!hideCalculate && <p className={'calculator__month-price'}>{monthPay} ₽</p>}
+          {!hideCalculate && (
+            <p className={'calculator__month-price'}>
+              {String(monthPay)
+                .split('')
+                .reverse()
+                .join('')
+                .replace(/\d\d\d/g, '$& ')
+                .split('')
+                .reverse()
+                .join('')}{' '}
+              ₽
+            </p>
+          )}
           {hideCalculate && <p className={'loadingSpinner'}></p>}
         </div>
         <Button

@@ -25,7 +25,6 @@
 @import 'normalize.scss';
 @import 'reset.scss';
 @import 'home.scss';
-@import 'media.scss';
 
 * {
   box-sizing: border-box;
@@ -47,3 +46,5 @@ body {
   margin: 0 auto;
   margin-top: 213px;
 }
+
+@import 'media.scss';
