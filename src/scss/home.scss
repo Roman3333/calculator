@@ -1,0 +1,146 @@
+.calculator {
+  &__title {
+    font-family: 'Nekst';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 54px;
+    line-height: 90%;
+    color: #111111;
+    margin-bottom: 32px;
+    max-width: 753px;
+    transition: all 0.3s;
+  }
+
+  &__values {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 44px;
+  }
+
+  &__counted {
+    display: grid;
+    height: 81px;
+    grid-template-columns: 427px 427px 427px;
+    gap: 32px;
+    justify-content: space-between;
+  }
+
+  &__counted:last-child {
+    align-items: flex-end;
+  }
+
+  &__value {
+    width: 427px;
+    height: 119px;
+  }
+
+  &__p {
+    margin-bottom: 24px;
+  }
+
+  &__inputInside {
+    position: absolute;
+    font-family: 'Nekst';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 30px;
+    line-height: 36px;
+    color: #575757;
+    right: 20px;
+    top: 14px;
+  }
+  &__inputInside-input {
+    padding: 15px 15px;
+    background: #ebebec;
+    border-radius: 16px;
+    border: none;
+    width: 69px;
+    height: 54px;
+    position: absolute;
+    font-family: 'Nekst';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 20px;
+    line-height: 24px;
+    text-align: right;
+    color: #575757;
+    right: 7px;
+    top: 7px;
+    &:focus {
+      outline: none;
+      border: none;
+    }
+    &:disabled {
+      color: #bcbcbc;
+      background: #fafafb;
+    }
+  }
+  &__rouble {
+    position: absolute;
+    font-family: 'Nekst';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 30px;
+    line-height: 36px;
+    top: 13px;
+    left: 150px;
+    color: #575757;
+  }
+
+  &__leasingPrice,
+  &__month {
+    width: 427px;
+    height: 81px;
+  }
+
+  &__leasingPrice-p,
+  &__month-p {
+    margin-bottom: 8px;
+  }
+
+  &__leasing-price,
+  &__month-price {
+    font-family: 'Nekst';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 54px;
+    line-height: 90%;
+    color: #333333;
+  }
+}
+
+.loadingSpinner {
+  width: 35px;
+  height: 35px;
+  border: 3px solid #ff9514;
+  border-top: 3px solid transparent;
+  margin: 0 auto;
+  border-radius: 50%;
+  animation: spinner 1.5s linear infinite;
+}
+
+@keyframes spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes show {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+.disabled {
+  color: #bcbcbc !important;
+}

@@ -1,0 +1,49 @@
+@font-face {
+  font-family: 'Nekst';
+  src: url('./../fonts/nekst/Nekst-Black.eot');
+  src: local('Nekst Black'), local('Nekst-Black'),
+    url('./../fonts/nekst/Nekst-Black.eot?#iefix') format('embedded-opentype'),
+    url('./../fonts/nekst/Nekst-Black.woff2') format('woff2'),
+    url('./../fonts/nekst/Nekst-Black.woff') format('woff'),
+    url('./../fonts/nekst/Nekst-Black.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Gilroy';
+  src: url('./../fonts/gilroy/Gilroy-Regular.eot');
+  src: local('Gilroy Regular'), local('Gilroy-Regular'),
+    url('./../fonts/gilroy/Gilroy-Regular.eot?#iefix') format('embedded-opentype'),
+    url('./../fonts/gilroy/Gilroy-Regular.woff2') format('woff2'),
+    url('./../fonts/gilroy/Gilroy-Regular.woff') format('woff'),
+    url('./../fonts/gilroy/Gilroy-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@import 'normalize.scss';
+@import 'reset.scss';
+@import 'home.scss';
+@import 'media.scss';
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Gilroy';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  padding: 0 48px;
+  height: fit-content;
+  overflow: auto;
+}
+
+.app {
+  max-width: 1440px;
+  margin: 0 auto;
+  margin-top: 213px;
+}
